@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -24,4 +24,4 @@ jobs:
         pip install .
     - name: Test with unittest
       run: |
-        python -m unittest discover
+        export MOCK_DATA=1; python -m unittest discover
