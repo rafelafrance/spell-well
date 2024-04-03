@@ -26,14 +26,14 @@ optional-dependencies.dev = [
 ]
 
 [project.scripts]
-create-spell-well-from-idigbio = "traiter.create_spell_well_from_idigbio:main"
+create-spell-well-from-idigbio = "spell.create_spell_well_from_idigbio:main"
 
 [tool.setuptools]
 py-modules = []
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["traiter"]
+include = ["spell"]
 namespaces = false
 
 [tool.ruff]
