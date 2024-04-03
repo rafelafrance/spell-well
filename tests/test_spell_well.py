@@ -1,6 +1,6 @@
 import unittest
 
-from spell.pylib.spell_well import SpellWell
+from spell_well.pylib.spell_well import SpellWell
 
 
 class TestSpellWell(unittest.TestCase):

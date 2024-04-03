@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import regex as re
 
-from spell import terms
+from spell_well import terms
 
 
 class SpellWell:
