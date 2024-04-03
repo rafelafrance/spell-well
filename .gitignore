@@ -1,0 +1,46 @@
+# Editors
+.ropeproject/
+.spyproject/
+.vscode/
+.idea/
+.~*
+*-journal
+
+# Distribution / packaging
+build/
+dist/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# Linters
+.ruff_cache/
+.mypy_cache/
+
+# Environment
+.env
+venv/
+.venv/
+
+# Python
+*.pyc
+*.swp
+__pycache__
+.ipynb_checkpoints/
+
+# docs
+docs/old/
+admin/
+
+# data
+output/
+data/
+
+# Temp files
+temp/
+*junk*
+old/
