@@ -17,7 +17,7 @@ make install
 
 The `make install` will create a virtual environment in `.venv`, then it will install dependencies into this directory.
 
-Every time you want to run any script in this repository (including tests) you will need to activate the virtual environment.
+Every time you want to run any script in this repository you will need to activate the virtual environment.
 
 ```zsh
 cd /path/to/spell-well
@@ -29,5 +29,5 @@ source .venv/bin/activate
 There are tests which you can run like so:
 
 ```zsh
-python -m unittest discover
+make test
 ```

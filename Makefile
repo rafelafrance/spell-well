@@ -1,27 +1,28 @@
-.PHONY: test install dev venv clean
+.PHONY: test install dev venv clean activate base
 .ONESHELL:
 
 VENV=.venv
 PY_VER=python3.11
 PYTHON=./$(VENV)/bin/$(PY_VER)
 PIP_INSTALL=$(PYTHON) -m pip install
-BASE=pip setuptools wheel
 
-test:
+test: activate
 	$(PYTHON) -m unittest discover
 
-install: venv
-	source $(VENV)/bin/activate
-	$(PIP_INSTALL) -U $(BASE)
+install: venv activate base
 	$(PIP_INSTALL) git+https://github.com/rafelafrance/common_utils.git@main#egg=common_utils
 	$(PIP_INSTALL) .
 
-dev: venv
-	source $(VENV)/bin/activate
-	$(PIP_INSTALL) -U $(BASE)
+dev: venv activate base
 	$(PIP_INSTALL) -e ../../misc/common_utils
 	$(PIP_INSTALL) -e .[dev]
 	pre-commit install
+
+activate:
+	. $(VENV)/bin/activate
+
+base:
+	$(PIP_INSTALL) -U pip setuptools wheel
 
 venv:
 	test -d $(VENV) || $(PY_VER) -m venv $(VENV)
